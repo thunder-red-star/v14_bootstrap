@@ -35,3 +35,7 @@ just a repo where i store the beginning of any simple (not simple as in one-file
 
 ## license
 [temporal education oss license](https://raw.githubusercontent.com/TemporalEdu/TemporalServer/main/LICENSE)
+
+## regex to allow all domains for google re2 with wildcards before and after
+`^https?:\/\/.*\.*\..*\/.*$`  
+because you never knew you would need this information, but now you do
