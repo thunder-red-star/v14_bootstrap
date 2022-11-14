@@ -1,0 +1,33 @@
+{
+  "token": "YOUR_SECRET_BOT_TOKEN_HERE",
+  "totalShards": "auto",
+  "defaultPrefix": "!",
+  "owners": [
+    "YOUR_USER_ID_HERE"
+  ],
+  "database": {
+    "type": "json",
+    "path": "./data/database.json"
+  },
+  "invitePermissions": "some_bitfield",
+  "supportServer": "https://discord.gg/your_cool_server",
+  "colors": {
+    "success": 53866,
+    "warning": 16756782,
+    "error": 16330592,
+    "default": 3553599
+  },
+  "emojis": {
+    "paginator": {
+      "first": "1027354966207246396",
+      "left": "1027354943889362974",
+      "delete": "1027355013997146223",
+      "right": "1027355037040652298",
+      "last": "1027355052693799024",
+      "search": "1027355291190300672"
+    },
+    "check": "1027356606905720913",
+    "warning": "1027356629747908608",
+    "cross": "1027356592649289788"
+  }
+}
