@@ -13,9 +13,9 @@ just a repo where i store the beginning of any simple (not simple as in one-file
 ## why me?
 > why not you?
 
-this bot is one of the most incredible bootstraps you can have, with fully fledged message commands, interaction commands (yep, both mediums are supported), and a fully fledged event handler. it's also very easy to use, and you can easily add your own commands and events.
-also, there's a cool database system (json woaah) that you can use to store data in a file, and it's very easy to use.
-plus it's made by thunderredstar so it's obviously the best bot ever made
+- this bot is one of the most incredible bootstraps you can have, with fully fledged message commands, interaction commands (yep, both mediums are supported), and a fully fledged event handler. it's also very easy to use, and you can easily add your own commands and events.
+- also, there's a cool database system (json woaah) that you can use to store data in a file, and it's very easy to use.
+- plus it's made by thunderredstar so it's obviously the best bot ever made
 
 ## how to contribute
 1. fork the repo
