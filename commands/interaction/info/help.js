@@ -39,7 +39,7 @@ module.exports = {
 	cooldown: 5_000,
 	execute: async function(interaction, client, args, Discord) {
 		// Get guild prefix
-		let prefix = global.config.prefix;
+		let prefix = global.config.defaultPrefix;
 		if (interaction.guild) {
 			const guild = await global.database.guild.get.by({ _id: interaction.guild.id });
 			if (guild) prefix = guild.prefix;

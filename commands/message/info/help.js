@@ -28,7 +28,7 @@ module.exports = {
 	cooldown: 5_000,
 	execute: async function(message, client, args, Discord) {
 		// Get server prefix
-		let prefix = global.config.prefix;
+		let prefix = global.config.defaultPrefix;
 		if (message.guild) {
 			const guild = await global.database.guild.get.by({ _id: message.guild.id });
 			if (guild) prefix = guild.prefix;
