@@ -30,7 +30,7 @@ module.exports = {
 		// Get server prefix
 		let prefix = global.config.defaultPrefix;
 		if (message.guild) {
-			const guild = await global.database.guild.get.by({ _id: message.guild.id });
+			const guild = await global.database.guild.get.by({ id: message.guild.id });
 			if (guild) prefix = guild.prefix;
 		}
 		// If no command is specified

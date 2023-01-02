@@ -1,5 +1,6 @@
 const argParser = require("../utils/parsing/argParser.js");
 const createMessageError = require("../utils/error/createMessageError.js");
+const {parse} = require("nodemon/lib/cli");
 
 module.exports =  async function messageCreate(client, message) {
     // Ignore messages from bots and webhooks
@@ -9,13 +10,16 @@ module.exports =  async function messageCreate(client, message) {
     let prefix = global.config.defaultPrefix;
     if (message.guild) {
         // Get the guild prefix
-        let guild = await global.database.guild.get.by({_id: message.guild.id});
+        let guild = await global.database.guild.get.by({id: message.guild.id});
         if (guild) {
             // Prefix?
             prefix = guild.prefix;
         } else {
             // Create the guild
-            await global.database.guild.create(message.guild.id, prefix);
+            await global.database.guild.create({
+                id: message.guild.id,
+                prefix: global.config.defaultPrefix
+            });
         }
     }
 
@@ -105,9 +109,15 @@ module.exports =  async function messageCreate(client, message) {
                     content: `<:cross:${global.config.emojis.cross}> Missing required argument \`${arg.name}\` of type \`${arg.type}\`.`
                 });
             }
-            if (arg.choices && arg.choices.length > 0 && !arg.choices.includes(parsedArgs[arg.name])) {
+            let choices = [];
+            if (arg.choices) {
+                for (let choice of arg.choices) {
+                    choices.push(choice.name);
+                }
+            }
+            if (arg.choices && arg.choices.length > 0 && !choices.includes(parsedArgs[arg.name]) && parsedArgs[arg.name] !== undefined && parsedArgs[arg.name] !== null) {
                 return message.channel.send({
-                    content: `<:cross:${global.config.emojis.cross}> Invalid choice for argument \`${arg.name}\`. Must be one of \`${arg.choices.join("`, `")}\`.`
+                    content: `<:cross:${global.config.emojis.cross}> Invalid choice for argument \`${arg.name}\`. Must be one of \`${choices.join("`, `")}\`.`
                 });
             }
         }

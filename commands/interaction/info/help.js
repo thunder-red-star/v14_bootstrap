@@ -41,7 +41,7 @@ module.exports = {
 		// Get guild prefix
 		let prefix = global.config.defaultPrefix;
 		if (interaction.guild) {
-			const guild = await global.database.guild.get.by({ _id: interaction.guild.id });
+			const guild = await global.database.guild.get.by({ id: interaction.guild.id });
 			if (guild) prefix = guild.prefix;
 		}
 		// Is a command specified?

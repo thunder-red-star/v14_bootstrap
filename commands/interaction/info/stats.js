@@ -69,7 +69,7 @@ module.exports = {
 	cooldown: 5_000,
 	execute: async function(interaction, client, args, Discord) {
 		// Get package.json
-		const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../../package.json'), 'utf8'));
+		const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../package.json'), 'utf8'));
 
 		let totalUsers = 0;
 		for (let guild of client.guilds.cache.values()) {
