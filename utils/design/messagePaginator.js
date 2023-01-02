@@ -91,7 +91,7 @@ let row2 = [
     blankButton4
 ]
 
-async function(message, pages) {
+async function messagePaginator (message, pages) {
     // Message should be a Discord.Message
     // Pages should be an array of Discord.Embeds or Builders.Embed
     let titles = [];
@@ -330,6 +330,4 @@ async function(message, pages) {
 
     return msg;
 }
-module.exports = {
-    default: function(message,
-}
+module.exports = messagePaginator;
